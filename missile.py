@@ -15,7 +15,11 @@ class Missile:
         self.rect = self.img.get_rect()
         self.rect.center = start_position
         self.rect.move_ip(0, -Missile.DISTANCE_FROM_SHIP)
-        
+        self.fire_img = pygame.image.load(os.path.join(
+            os.getcwd(), "images/fire-missile.png")).convert_alpha()
+        self.fire_rect = self.fire_img.get_rect()
+        self.fire_rect.center = start_position
+        self.fire_rect.move_ip(0, -Missile.DISTANCE_FROM_MISSILE)
         self.speed = 4
         self.flame_countdown_start = pygame.time.get_ticks()
 
