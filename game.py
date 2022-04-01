@@ -65,10 +65,10 @@ while True:
     
     ## TODO ##
     # 1. Gérer les bords pour le player.
-    # 2. Gérer les missiles du player
-    # 3. Mettre en mouvement les objets.
-    # 4. Nettoyage des objets
-    # 5. Gérer le spawn des ennemis.
-    # 6. Gérer la collision missile/ennemi.
-    # 7. Gérer le tir ennemi
-    # 8. Background dynamique
+    # 2. Mettre en mouvement les objets.
+    # 3. Nettoyage des objets
+    # 4. Gérer le spawn des ennemis.
+    # 5. Gérer la collision missile/ennemi.
+    # 6. Gérer le tir ennemi
+    # 7. Background dynamique
+    # 8. Améliorer le tir ennemi
