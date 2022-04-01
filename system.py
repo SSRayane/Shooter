@@ -41,6 +41,9 @@ class System:
             if key == "missiles" and objects["missiles"]:
                 for missile in objects[key]:
                     self.window.blit(missile.img, missile.rect)
+                    if pygame.time.get_ticks()-missile.flame_countdown_start < Missile.FLAME_DURATION:
+                        self.window.blit(
+                            missile.fire_img, missile.fire_rect)
 
             if key == "enemies" and objects["enemies"]:
                 for enemy in objects[key]:
