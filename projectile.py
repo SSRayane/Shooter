@@ -12,7 +12,6 @@ class Projectile:
         self.circle_rect = pygame.draw.circle(
             surface, (self.color), start_position, self.radius)
         self.circle_rect.center = start_position
-        #self.spawn_time = pygame.time.get_ticks()
 
     
         x = vector[0]

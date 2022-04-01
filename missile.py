@@ -19,9 +19,7 @@ class Missile:
         self.fire_rect = self.fire_img.get_rect()
         self.fire_rect.center = start_position
         self.fire_rect.move_ip(0, -Missile.DISTANCE_FROM_MISSILE)
-        self.noise = pygame.mixer.Sound(
-            os.path.join(os.getcwd(), "sounds/missile.wav"))
-        #self.noise.play()
+        
         self.speed = 4
         self.flame_countdown_start = pygame.time.get_ticks()
 
