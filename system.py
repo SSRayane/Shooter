@@ -76,11 +76,9 @@ class System:
             if pygame.time.get_ticks()-effect.countdown_start > effect.display_time:
                 del objects["effects"][i]
 
-        for i, key in enumerate(objects["projectiles"]):
-            if key == "enemy{}".format(str(i)):
-                for y, projectile in enumerate(objects["projectiles"][key]):
-                    if projectile.handle_range(self.width, self.height):
-                        del objects["projectiles"][key][y]
+        for i, projectile in enumerate(objects["projectiles"]):
+            if projectile.handle_range(self.width, self.height):
+                del objects["projectiles"][i]
 
     def move_objects(self, objects: dict) -> None:
         for i, missile in enumerate(objects["missiles"]):

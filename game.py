@@ -24,6 +24,8 @@ objects["effects"] = []
 enemy = Enemy((random.randint(0+X_MARGIN_ENEMY_SPAWN,
                               game_system.width-X_MARGIN_ENEMY_SPAWN), 0))
 objects["enemies"].append(enemy)
+enemy_spawn = pygame.time.get_ticks()
+
 projectile = Projectile(game_system.window, enemy.rect.center,game_system.aim_projectile_vector(enemy,player))
 
 
@@ -33,10 +35,10 @@ iter = 0
 while True:
 
     game_system.clock.tick(60)
-    enemy_spawn = pygame.time.get_ticks()
+    
     missile_spawn = pygame.time.get_ticks()
 
-    if enemy_spawn - objects["enemies"][-1].spawn_time > Enemy.SPAWN_TIMER:
+    if pygame.time.get_ticks() - enemy_spawn > Enemy.SPAWN_TIMER:
         objects["enemies"].append(
             Enemy((random.randint(0+X_MARGIN_ENEMY_SPAWN,
                                   game_system.width-X_MARGIN_ENEMY_SPAWN), 0)))
@@ -74,7 +76,6 @@ while True:
     game_system.move_objects(objects)
     game_system.display_background(background_iter)
     game_system.display_objects(objects)
-    
 
     iter += 1
     if iter%2 ==0 :
